@@ -1,19 +1,8 @@
 parsing a schema...
-compiling a schema...
-br/inf/portalfiscal/nfe/ObjectFactory.java
-br/inf/portalfiscal/nfe/TConsDPEC.java
-br/inf/portalfiscal/nfe/TDPEC.java
-br/inf/portalfiscal/nfe/TRetConsDPEC.java
-br/inf/portalfiscal/nfe/TRetDPEC.java
-br/inf/portalfiscal/nfe/TUf.java
-br/inf/portalfiscal/nfe/package-info.java
-org/w3/_2000/_09/xmldsig/KeyInfoType.java
-org/w3/_2000/_09/xmldsig/ObjectFactory.java
-org/w3/_2000/_09/xmldsig/ReferenceType.java
-org/w3/_2000/_09/xmldsig/SignatureType.java
-org/w3/_2000/_09/xmldsig/SignatureValueType.java
-org/w3/_2000/_09/xmldsig/SignedInfoType.java
-org/w3/_2000/_09/xmldsig/TransformType.java
-org/w3/_2000/_09/xmldsig/TransformsType.java
-org/w3/_2000/_09/xmldsig/X509DataType.java
-org/w3/_2000/_09/xmldsig/package-info.java
+[ERROR] 'TEndereco' is already defined
+  line 3645 of file:/home/paulo.alves/git/NFeModel/schema/leiauteNFe_v1.10.xsd
+
+[ERROR] (related to above error) the first definition appears here
+  line 235 of file:/home/paulo.alves/git/NFeModel/schema/leiauteConsultaCadastro_v1.01.xsd
+
+Failed to parse a schema.
