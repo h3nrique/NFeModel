@@ -3,7 +3,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>br.com.midiadev.sefaz</groupId>
 	<artifactId>NFeModel</artifactId>
-	<version>1.01a-PL_DPEC_101a</version>
+	<version>1.10a-PL_005d</version>
 	<packaging>jar</packaging>
 
 	<properties>
