@@ -1,4 +1,4 @@
 NFeModel
 ========
 
-Projeto com objetos utilizados para as chamadas dos serviços de NFe da Receita Federal.
+Projeto com objetos utilizados nos serviços de NFe disponibilizados pelas Secretarias de Fazenda.
