@@ -1,6 +1,7 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
+<!--  PL_006c versao com correcoes 24/12/2009 -->
 <xs:schema xmlns:ds="http://www.w3.org/2000/09/xmldsig#" xmlns="http://www.portalfiscal.inf.br/nfe" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.portalfiscal.inf.br/nfe" elementFormDefault="qualified" attributeFormDefault="unqualified">
-	<xs:include schemaLocation="tiposBasico_v1.02.xsd"/>
+	<xs:include schemaLocation="tiposBasico_v1.03.xsd"/>
 	<xs:complexType name="TConsCad">
 		<xs:annotation>
 			<xs:documentation>Tipo Pedido de Consulta de cadastro de contribuintes</xs:documentation>
@@ -150,6 +151,48 @@
 											</xs:restriction>
 										</xs:simpleType>
 									</xs:element>
+									<xs:element name="indCredNFe">
+										<xs:annotation>
+											<xs:documentation>Indicador de contribuinte credenciado a emitir NF-e.
+0 - Não credenciado para emissão da NF-e;
+1 - Credenciado;
+2 - Credenciado com obrigatoriedade para todas operações;
+3 - Credenciado com obrigatoriedade parcial;
+4 – a SEFAZ não fornece a informação.
+Este indicador significa apenas que o contribuinte é credenciado para emitir NF-e na SEFAZ consultada.</xs:documentation>
+										</xs:annotation>
+										<xs:simpleType>
+											<xs:restriction base="xs:string">
+												<xs:whiteSpace value="preserve"/>
+												<xs:enumeration value="0"/>
+												<xs:enumeration value="1"/>
+												<xs:enumeration value="2"/>
+												<xs:enumeration value="3"/>
+												<xs:enumeration value="4"/>
+											</xs:restriction>
+										</xs:simpleType>
+									</xs:element>
+									<xs:element name="indCredCTe">
+										<xs:annotation>
+											<xs:documentation>Indicador de contribuinte credenciado a emitir CT-e.
+0 - Não credenciado para emissão da CT-e;
+1 - Credenciado;
+2 - Credenciado com obrigatoriedade para todas operações;
+3 - Credenciado com obrigatoriedade parcial;
+4 – a SEFAZ não fornece a informação.
+Este indicador significa apenas que o contribuinte é credenciado para emitir CT-e na SEFAZ consultada.</xs:documentation>
+										</xs:annotation>
+										<xs:simpleType>
+											<xs:restriction base="xs:string">
+												<xs:whiteSpace value="preserve"/>
+												<xs:enumeration value="0"/>
+												<xs:enumeration value="1"/>
+												<xs:enumeration value="2"/>
+												<xs:enumeration value="3"/>
+												<xs:enumeration value="4"/>
+											</xs:restriction>
+										</xs:simpleType>
+									</xs:element>
 									<xs:element name="xNome">
 										<xs:annotation>
 											<xs:documentation>Razão Social ou nome do contribuinte</xs:documentation>
@@ -232,6 +275,83 @@
 		</xs:sequence>
 		<xs:attribute name="versao" type="TVerConsCad" use="required"/>
 	</xs:complexType>
+	<xs:complexType name="TEndereco">
+		<xs:annotation>
+			<xs:documentation>Tipo Dados do Endereço</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="xLgr" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Logradouro</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="TString">
+						<xs:minLength value="1"/>
+						<xs:maxLength value="255"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="nro" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Número</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="TString">
+						<xs:maxLength value="60"/>
+						<xs:minLength value="1"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="xCpl" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Complemento</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="TString">
+						<xs:maxLength value="60"/>
+						<xs:minLength value="1"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="xBairro" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Bairro</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="TString">
+						<xs:maxLength value="60"/>
+						<xs:minLength value="1"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="cMun" type="TCodMunIBGE" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Código do município (utilizar a tabela do IBGE), informar 9999999 para operações com o exterior.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="xMun" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Nome do município</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="TString">
+						<xs:maxLength value="60"/>
+						<xs:minLength value="1"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="CEP" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>CEP</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:token">
+						<xs:pattern value="[0-9]{7,8}"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
 	<xs:simpleType name="TUfCons">
 		<xs:annotation>
 			<xs:documentation>Tipo Sigla da UF consultada</xs:documentation>
@@ -269,10 +389,10 @@
 	</xs:simpleType>
 	<xs:simpleType name="TVerConsCad">
 		<xs:annotation>
-			<xs:documentation>Tipo Versão do Leiaute da Consulta Cadastro</xs:documentation>
+			<xs:documentation>Tipo Versão do Leiaute da Consulta Cadastro 2.00</xs:documentation>
 		</xs:annotation>
 		<xs:restriction base="xs:token">
-			<xs:pattern value="1\.01"/>
+			<xs:pattern value="2\.00"/>
 		</xs:restriction>
 	</xs:simpleType>
 </xs:schema>
