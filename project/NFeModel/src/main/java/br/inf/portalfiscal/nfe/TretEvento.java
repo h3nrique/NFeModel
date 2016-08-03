@@ -22,12 +22,12 @@ import org.w3._2000._09.xmldsig_.SignatureType;
 /**
  * Tipo retorno do Evento
  * 
- * <p>Java class for TRetEvento complex type.
+ * <p>Java class for TretEvento complex type.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
- * &lt;complexType name="TRetEvento">
+ * &lt;complexType name="TretEvento">
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
@@ -110,14 +110,14 @@ import org.w3._2000._09.xmldsig_.SignatureType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "TRetEvento", propOrder = {
+@XmlType(name = "TretEvento", propOrder = {
     "infEvento",
     "signature"
 })
-public class TRetEvento {
+public class TretEvento {
 
     @XmlElement(required = true)
-    protected TRetEvento.InfEvento infEvento;
+    protected TretEvento.InfEvento infEvento;
     @XmlElement(name = "Signature", namespace = "http://www.w3.org/2000/09/xmldsig#")
     protected SignatureType signature;
     @XmlAttribute(name = "versao", required = true)
@@ -128,10 +128,10 @@ public class TRetEvento {
      * 
      * @return
      *     possible object is
-     *     {@link TRetEvento.InfEvento }
+     *     {@link TretEvento.InfEvento }
      *     
      */
-    public TRetEvento.InfEvento getInfEvento() {
+    public TretEvento.InfEvento getInfEvento() {
         return infEvento;
     }
 
@@ -140,10 +140,10 @@ public class TRetEvento {
      * 
      * @param value
      *     allowed object is
-     *     {@link TRetEvento.InfEvento }
+     *     {@link TretEvento.InfEvento }
      *     
      */
-    public void setInfEvento(TRetEvento.InfEvento value) {
+    public void setInfEvento(TretEvento.InfEvento value) {
         this.infEvento = value;
     }
 

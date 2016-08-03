@@ -18,21 +18,28 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- *  Tipo Pedido de Concessão de Autorização da Nota Fiscal Eletrônica
+ *  Tipo Lote de Envio
  * 
- * <p>Java class for TEnviNFe complex type.
+ * <p>Java class for TEnvEvento complex type.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
- * &lt;complexType name="TEnviNFe">
+ * &lt;complexType name="TEnvEvento">
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
- *         &lt;element name="idLote" type="{http://www.portalfiscal.inf.br/nfe}TIdLote"/>
- *         &lt;element name="NFe" type="{http://www.portalfiscal.inf.br/nfe}TNFe" maxOccurs="50"/>
+ *         &lt;element name="idLote">
+ *           &lt;simpleType>
+ *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *               &lt;whiteSpace value="preserve"/>
+ *               &lt;pattern value="[0-9]{1,15}"/>
+ *             &lt;/restriction>
+ *           &lt;/simpleType>
+ *         &lt;/element>
+ *         &lt;element name="evento" type="{http://www.portalfiscal.inf.br/nfe}TEvento" maxOccurs="20"/>
  *       &lt;/sequence>
- *       &lt;attribute name="versao" use="required" type="{http://www.portalfiscal.inf.br/nfe}TVerNFe" />
+ *       &lt;attribute name="versao" use="required" type="{http://www.portalfiscal.inf.br/nfe}TVerEnvEvento" />
  *     &lt;/restriction>
  *   &lt;/complexContent>
  * &lt;/complexType>
@@ -41,16 +48,16 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "TEnviNFe", propOrder = {
+@XmlType(name = "TEnvEvento", propOrder = {
     "idLote",
-    "nFe"
+    "evento"
 })
-public class TEnviNFe {
+public class TEnvEvento {
 
     @XmlElement(required = true)
     protected String idLote;
-    @XmlElement(name = "NFe", required = true)
-    protected List<TNFe> nFe;
+    @XmlElement(required = true)
+    protected List<TEvento> evento;
     @XmlAttribute(name = "versao", required = true)
     protected String versao;
 
@@ -79,32 +86,32 @@ public class TEnviNFe {
     }
 
     /**
-     * Gets the value of the nFe property.
+     * Gets the value of the evento property.
      * 
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
      * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the nFe property.
+     * This is why there is not a <CODE>set</CODE> method for the evento property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
      * <pre>
-     *    getNFe().add(newItem);
+     *    getEvento().add(newItem);
      * </pre>
      * 
      * 
      * <p>
      * Objects of the following type(s) are allowed in the list
-     * {@link TNFe }
+     * {@link TEvento }
      * 
      * 
      */
-    public List<TNFe> getNFe() {
-        if (nFe == null) {
-            nFe = new ArrayList<TNFe>();
+    public List<TEvento> getEvento() {
+        if (evento == null) {
+            evento = new ArrayList<TEvento>();
         }
-        return this.nFe;
+        return this.evento;
     }
 
     /**
