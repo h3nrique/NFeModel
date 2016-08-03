@@ -12,25 +12,37 @@ import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.CollapsedStringAdapter;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 
 /**
- * Tipo Pedido de Consulta do Recido do Lote de Notas Fiscais Eletrônicas
- * 
- * <p>Java class for TConsReciNFe complex type.
+ * <p>Java class for anonymous complex type.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
- * &lt;complexType name="TConsReciNFe">
+ * &lt;complexType>
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
- *         &lt;element name="tpAmb" type="{http://www.portalfiscal.inf.br/nfe}TAmb"/>
- *         &lt;element name="nRec" type="{http://www.portalfiscal.inf.br/nfe}TRec"/>
+ *         &lt;element name="versaoDados">
+ *           &lt;simpleType>
+ *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}token">
+ *               &lt;pattern value="[1-9]{1}[0-9]{0,1}\.[0-9]{2}"/>
+ *             &lt;/restriction>
+ *           &lt;/simpleType>
+ *         &lt;/element>
  *       &lt;/sequence>
- *       &lt;attribute name="versao" use="required" type="{http://www.portalfiscal.inf.br/nfe}TVerNFe" />
+ *       &lt;attribute name="versao" use="required">
+ *         &lt;simpleType>
+ *           &lt;restriction base="{http://www.w3.org/2001/XMLSchema}token">
+ *             &lt;pattern value="1\.02"/>
+ *           &lt;/restriction>
+ *         &lt;/simpleType>
+ *       &lt;/attribute>
  *     &lt;/restriction>
  *   &lt;/complexContent>
  * &lt;/complexType>
@@ -39,65 +51,41 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "TConsReciNFe", propOrder = {
-    "tpAmb",
-    "nRec"
+@XmlType(name = "", propOrder = {
+    "versaoDados"
 })
-public class TConsReciNFe {
+@XmlRootElement(name = "cabecMsg")
+public class CabecMsg {
 
     @XmlElement(required = true)
-    protected String tpAmb;
-    @XmlElement(required = true)
-    protected String nRec;
+    @XmlJavaTypeAdapter(CollapsedStringAdapter.class)
+    protected String versaoDados;
     @XmlAttribute(name = "versao", required = true)
+    @XmlJavaTypeAdapter(CollapsedStringAdapter.class)
     protected String versao;
 
     /**
-     * Gets the value of the tpAmb property.
+     * Gets the value of the versaoDados property.
      * 
      * @return
      *     possible object is
      *     {@link String }
      *     
      */
-    public String getTpAmb() {
-        return tpAmb;
+    public String getVersaoDados() {
+        return versaoDados;
     }
 
     /**
-     * Sets the value of the tpAmb property.
+     * Sets the value of the versaoDados property.
      * 
      * @param value
      *     allowed object is
      *     {@link String }
      *     
      */
-    public void setTpAmb(String value) {
-        this.tpAmb = value;
-    }
-
-    /**
-     * Gets the value of the nRec property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getNRec() {
-        return nRec;
-    }
-
-    /**
-     * Sets the value of the nRec property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setNRec(String value) {
-        this.nRec = value;
+    public void setVersaoDados(String value) {
+        this.versaoDados = value;
     }
 
     /**
