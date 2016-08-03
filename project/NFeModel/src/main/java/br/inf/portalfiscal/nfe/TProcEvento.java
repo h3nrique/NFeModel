@@ -16,21 +16,21 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- *  Tipo da NF-e processada
+ * Tipo procEvento
  * 
- * <p>Java class for TNfeProc complex type.
+ * <p>Java class for TProcEvento complex type.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
- * &lt;complexType name="TNfeProc">
+ * &lt;complexType name="TProcEvento">
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
- *         &lt;element name="NFe" type="{http://www.portalfiscal.inf.br/nfe}TNFe"/>
- *         &lt;element name="protNFe" type="{http://www.portalfiscal.inf.br/nfe}TProtNFe"/>
+ *         &lt;element name="evento" type="{http://www.portalfiscal.inf.br/nfe}TEvento"/>
+ *         &lt;element name="retEvento" type="{http://www.portalfiscal.inf.br/nfe}TRetEvento"/>
  *       &lt;/sequence>
- *       &lt;attribute name="versao" use="required" type="{http://www.portalfiscal.inf.br/nfe}TVerNFe" />
+ *       &lt;attribute name="versao" use="required" type="{http://www.portalfiscal.inf.br/nfe}TVerEvento" />
  *     &lt;/restriction>
  *   &lt;/complexContent>
  * &lt;/complexType>
@@ -39,65 +39,65 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "TNfeProc", propOrder = {
-    "nFe",
-    "protNFe"
+@XmlType(name = "TProcEvento", propOrder = {
+    "evento",
+    "retEvento"
 })
-public class TNfeProc {
+public class TProcEvento {
 
-    @XmlElement(name = "NFe", required = true)
-    protected TNFe nFe;
     @XmlElement(required = true)
-    protected TProtNFe protNFe;
+    protected TEvento evento;
+    @XmlElement(required = true)
+    protected TRetEvento retEvento;
     @XmlAttribute(name = "versao", required = true)
     protected String versao;
 
     /**
-     * Gets the value of the nFe property.
+     * Gets the value of the evento property.
      * 
      * @return
      *     possible object is
-     *     {@link TNFe }
+     *     {@link TEvento }
      *     
      */
-    public TNFe getNFe() {
-        return nFe;
+    public TEvento getEvento() {
+        return evento;
     }
 
     /**
-     * Sets the value of the nFe property.
+     * Sets the value of the evento property.
      * 
      * @param value
      *     allowed object is
-     *     {@link TNFe }
+     *     {@link TEvento }
      *     
      */
-    public void setNFe(TNFe value) {
-        this.nFe = value;
+    public void setEvento(TEvento value) {
+        this.evento = value;
     }
 
     /**
-     * Gets the value of the protNFe property.
+     * Gets the value of the retEvento property.
      * 
      * @return
      *     possible object is
-     *     {@link TProtNFe }
+     *     {@link TRetEvento }
      *     
      */
-    public TProtNFe getProtNFe() {
-        return protNFe;
+    public TRetEvento getRetEvento() {
+        return retEvento;
     }
 
     /**
-     * Sets the value of the protNFe property.
+     * Sets the value of the retEvento property.
      * 
      * @param value
      *     allowed object is
-     *     {@link TProtNFe }
+     *     {@link TRetEvento }
      *     
      */
-    public void setProtNFe(TProtNFe value) {
-        this.protNFe = value;
+    public void setRetEvento(TRetEvento value) {
+        this.retEvento = value;
     }
 
     /**

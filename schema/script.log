@@ -1,14 +1,50 @@
 parsing a schema...
-[ERROR] 'TProtNFe' is already defined
-  line 154 of file:/home/h3nrique/git/NFeModel/schema/leiauteConsSitNFe_v2.01.xsd
+[WARNING] Simple type "TCfop" was not mapped to Enum due to EnumMemberSizeCap limit. Facets count: 515, current limit: 256. You can use customization attribute "typesafeEnumMaxMembers" to extend the limit.
+  line 4818 of file:/home/h3nrique/git/NFeModel/schema/leiauteNFe_v2.00.xsd
 
-[ERROR] (related to above error) the first definition appears here
-  line 4414 of file:/home/h3nrique/git/NFeModel/schema/leiauteNFe_v2.00.xsd
+[WARNING] Simple type "Tpais" was not mapped to Enum due to EnumMemberSizeCap limit. Facets count: 273, current limit: 256. You can use customization attribute "typesafeEnumMaxMembers" to extend the limit.
+  line 332 of file:/home/h3nrique/git/NFeModel/schema/tiposBasico_v1.03.xsd
 
-[ERROR] 'TVerNFe' is already defined
-  line 486 of file:/home/h3nrique/git/NFeModel/schema/leiauteConsSitNFe_v2.01.xsd
-
-[ERROR] (related to above error) the first definition appears here
-  line 5675 of file:/home/h3nrique/git/NFeModel/schema/leiauteNFe_v2.00.xsd
-
-Failed to parse a schema.
+compiling a schema...
+br/inf/portalfiscal/nfe/ObjectFactory.java
+br/inf/portalfiscal/nfe/TCancNFe.java
+br/inf/portalfiscal/nfe/TConsCad.java
+br/inf/portalfiscal/nfe/TConsReciNFe.java
+br/inf/portalfiscal/nfe/TConsSitNFe.java
+br/inf/portalfiscal/nfe/TConsStatServ.java
+br/inf/portalfiscal/nfe/TEnderEmi.java
+br/inf/portalfiscal/nfe/TEndereco.java
+br/inf/portalfiscal/nfe/TEnviNFe.java
+br/inf/portalfiscal/nfe/TEvento.java
+br/inf/portalfiscal/nfe/TInutNFe.java
+br/inf/portalfiscal/nfe/TLocal.java
+br/inf/portalfiscal/nfe/TNFe.java
+br/inf/portalfiscal/nfe/TNfeProc.java
+br/inf/portalfiscal/nfe/TProcCancNFe.java
+br/inf/portalfiscal/nfe/TProcEvento.java
+br/inf/portalfiscal/nfe/TProcInutNFe.java
+br/inf/portalfiscal/nfe/TProtNFe.java
+br/inf/portalfiscal/nfe/TRetCancNFe.java
+br/inf/portalfiscal/nfe/TRetCancNFeV200107.java
+br/inf/portalfiscal/nfe/TRetConsCad.java
+br/inf/portalfiscal/nfe/TRetConsReciNFe.java
+br/inf/portalfiscal/nfe/TRetConsSitNFe.java
+br/inf/portalfiscal/nfe/TRetConsStatServ.java
+br/inf/portalfiscal/nfe/TRetEnviNFe.java
+br/inf/portalfiscal/nfe/TRetEvento.java
+br/inf/portalfiscal/nfe/TRetInutNFe.java
+br/inf/portalfiscal/nfe/TUf.java
+br/inf/portalfiscal/nfe/TUfCons.java
+br/inf/portalfiscal/nfe/TUfEmi.java
+br/inf/portalfiscal/nfe/TVeiculo.java
+br/inf/portalfiscal/nfe/package-info.java
+org/w3/_2000/_09/xmldsig_/KeyInfoType.java
+org/w3/_2000/_09/xmldsig_/ObjectFactory.java
+org/w3/_2000/_09/xmldsig_/ReferenceType.java
+org/w3/_2000/_09/xmldsig_/SignatureType.java
+org/w3/_2000/_09/xmldsig_/SignatureValueType.java
+org/w3/_2000/_09/xmldsig_/SignedInfoType.java
+org/w3/_2000/_09/xmldsig_/TransformType.java
+org/w3/_2000/_09/xmldsig_/TransformsType.java
+org/w3/_2000/_09/xmldsig_/X509DataType.java
+org/w3/_2000/_09/xmldsig_/package-info.java

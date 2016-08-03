@@ -24,12 +24,12 @@ import org.w3._2000._09.xmldsig_.SignatureType;
 /**
  * Tipo retorno Pedido de Cancelamento da Nota Fiscal Eletrônica
  * 
- * <p>Java class for TRetCancNFe complex type.
+ * <p>Java class for TRetCancNFe_v200107 complex type.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
- * &lt;complexType name="TRetCancNFe">
+ * &lt;complexType name="TRetCancNFe_v200107">
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
@@ -54,7 +54,7 @@ import org.w3._2000._09.xmldsig_.SignatureType;
  *         &lt;/element>
  *         &lt;element ref="{http://www.w3.org/2000/09/xmldsig#}Signature" minOccurs="0"/>
  *       &lt;/sequence>
- *       &lt;attribute name="versao" use="required" type="{http://www.portalfiscal.inf.br/nfe}TVerCancNFe" />
+ *       &lt;attribute name="versao" use="required" type="{http://www.portalfiscal.inf.br/nfe}TVerCancNFe_v200107" />
  *     &lt;/restriction>
  *   &lt;/complexContent>
  * &lt;/complexType>
@@ -63,14 +63,14 @@ import org.w3._2000._09.xmldsig_.SignatureType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "TRetCancNFe", propOrder = {
+@XmlType(name = "TRetCancNFe_v200107", propOrder = {
     "infCanc",
     "signature"
 })
-public class TRetCancNFe {
+public class TRetCancNFeV200107 {
 
     @XmlElement(required = true)
-    protected TRetCancNFe.InfCanc infCanc;
+    protected TRetCancNFeV200107 .InfCanc infCanc;
     @XmlElement(name = "Signature", namespace = "http://www.w3.org/2000/09/xmldsig#")
     protected SignatureType signature;
     @XmlAttribute(name = "versao", required = true)
@@ -82,10 +82,10 @@ public class TRetCancNFe {
      * 
      * @return
      *     possible object is
-     *     {@link TRetCancNFe.InfCanc }
+     *     {@link TRetCancNFeV200107 .InfCanc }
      *     
      */
-    public TRetCancNFe.InfCanc getInfCanc() {
+    public TRetCancNFeV200107 .InfCanc getInfCanc() {
         return infCanc;
     }
 
@@ -94,10 +94,10 @@ public class TRetCancNFe {
      * 
      * @param value
      *     allowed object is
-     *     {@link TRetCancNFe.InfCanc }
+     *     {@link TRetCancNFeV200107 .InfCanc }
      *     
      */
-    public void setInfCanc(TRetCancNFe.InfCanc value) {
+    public void setInfCanc(TRetCancNFeV200107 .InfCanc value) {
         this.infCanc = value;
     }
 
